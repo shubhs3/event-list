@@ -32,6 +32,12 @@ const eventSchema = mongoose.Schema({
 		trim: true,
 		index: true,
 	},
+	date:{
+		type:Date,
+		required: true,
+		trim: true,
+		index: true,
+	}
 });
 
 eventSchema.index({ "$**": "text", _type: 1 });

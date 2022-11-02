@@ -4,7 +4,7 @@ const eventValidation = require('../../validations/event.validation');
 const eventController = require('../../controllers/event.controller');
 const router = express.Router();
 
-router.route('/').post(validate(eventValidation.createEvent),eventController.addEvent);
+router.route('/').post(validate(eventValidation.createEvent),eventController.createEvent);
 router.route('/:eventId').put(validate(eventValidation.updateEvent), eventController.updateEvent);
 router.route('/:eventId').delete(validate(eventValidation.deleteEventById),eventController.deleteEvent);
 

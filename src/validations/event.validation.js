@@ -6,16 +6,16 @@ const createEvent = {
 		name: Joi.string().required(),
 		location: Joi.string().required(),
 		description: Joi.string().required(),
+		category_id: Joi.string().required(),
 		image: Joi.string().required(),
-		date: Joi.string().required(),
-		time: Joi.string().required(),
+		date: Joi.date().required(),
 	}),
 };
 
 const getEvents = {
 	query: Joi.object().keys({
-		category: Joi.string(),
-		location: Joi.string(),
+		category_id : Joi.string().optional().allow(''),
+		location : Joi.string().optional().allow(''),
 		sortBy: Joi.string(),
 		limit: Joi.number().integer(),
 		page: Joi.number().integer(),
