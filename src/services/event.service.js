@@ -6,7 +6,6 @@ const queryEvents = async (filter, options) => {
 };
 
 const createEvent = async (data) => {
-  console.log("ser===> " , data);
   const event = await Event.create(data);
   return event;
 };
@@ -21,9 +20,9 @@ const deleteEvent = async (id) => {
   return event;
 };
 
-const getAllEvents = async (filter,options) => {
+const getAllEvents = async (filter, options) => {
   let event;
-  event = await Event.paginate(filter,options);
+  event = await Event.paginate(filter, options);
   return event;
 };
 

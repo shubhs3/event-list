@@ -1,8 +1,6 @@
 const pick = require('../utils/pick');
 const catchAsync = require('../utils/catchAsync');
 const { eventService } = require('../services');
-
-
 const createEvent = async (req, res) => {
   const body = req.body;
   body.image = req.file.filename;
@@ -22,8 +20,8 @@ const deleteEvent = async (req, res) => {
 };
 
 const getAllEvents = async (req, res) => {
-  var filter = {};
-  var options = pick(req.query, ['sortBy', 'limit', 'page']);
+  let filter = {};
+  let options = pick(req.query, ['sortBy', 'limit', 'page']);
   const event = await eventService.getAllEvents(filter, options);
   res.send(event);
 };
@@ -34,8 +32,8 @@ const getEventById = async (req, res) => {
 };
 
 const getEvents = async (req, res) => {
-  var filter = pick(req.query, ['category_id', 'location']);
-  var options = pick(req.query, ['sortBy', 'limit', 'page']);
+  let filter = pick(req.query, ['category_id', 'location']);
+  let options = pick(req.query, ['sortBy', 'limit', 'page']);
   filter = { ...filter };
   options = { ...options };
   Object.keys(filter).forEach(function (key) {
