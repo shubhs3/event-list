@@ -6,6 +6,7 @@ const queryEvents = async (filter, options) => {
 };
 
 const createEvent = async (data) => {
+  console.log("ser===> " , data);
   const event = await Event.create(data);
   return event;
 };
